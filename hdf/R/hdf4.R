@@ -2,7 +2,7 @@
 #'
 #' This function returns the content of a hdf4 file as a list.
 #' @param fname Name of the hdf4 file.
-#' @param sds.name Array containing all the SDS or vdata contained in the hdf4 file (privided by h4list).
+#' @param sds.name Array containing all the SDS or vdata contained in the hdf4 file (provided by h4list).
 #' @param sds Name of the SDS to extract.
 #' @keywords hdf4
 #' @export
