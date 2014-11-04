@@ -1,18 +1,16 @@
 #' Read hdf4 files
 #'
-#' This function returns the content of a hdf4 file as a list.
-#' @param fname Name of the hdf4 file.
-#' @param sds.name Array containing all the SDS or vdata contained in the hdf4 file (provided by h4list).
-#' @param sds Name of the SDS to extract.
+#' This function returns the content of a hdf4 file as a list for a given SDS.
+#' @param fname A character containing the name of the hdf4 file.
+#' @param sds.name An array containing all the SDS or vdata contained in the hdf4 file (provided by h4list).
+#' @param sds A character indicating the SDS to extract.
 #' @keywords hdf4
 #' @export
 #' @examples
-#' h4read(CALIOP.hdf,sds.CALIOP,"Latitude")
-#'
-#' 
-## .
-## fname: / sds: sds name (if it works) or number (0 included)
-##================================================================================================================
+#' fname <- data.hdf
+#' list.sds <- h4list(fname,ignore.vd=FALSE)  ## List the SDS and Vdata contained in data.hdf
+#' value.sds <- h4read(fname,list.sds,"Latitude") ## extract "Latitude" from data.hdf
+
 h4read <- function(fname,sds.name,sds,...) {
     library(rgdal,quietly=TRUE)
     
@@ -33,4 +31,3 @@ h4read <- function(fname,sds.name,sds,...) {
         
     return(sds)
 }
-##================================================================================================================
