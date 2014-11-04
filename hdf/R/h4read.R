@@ -13,6 +13,8 @@
 
 h4read <- function(fname,sds.name,sds,...) {
     library(rgdal,quietly=TRUE)
+
+    if(!file.exists(fname)) return("This file doesn't exists")
     
     idx.sds.name <- which(sds.name[,2]==sds)
     idx.sds <- sds.name[idx.sds.name,1]; type.sds <- attr(idx.sds.name,"names")

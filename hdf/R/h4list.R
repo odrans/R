@@ -12,6 +12,8 @@
 h4list <- function(fname, ignore.vd=TRUE) {
 
     options(warn=-1)
+
+    if(!file.exists(fname)) return("This file doesn't exists")
     
     ##-------------------------------------------------------------------------------------------------------------
     isds <- 0; sds.name <- NULL; attr(sds.name,'status')=NULL
