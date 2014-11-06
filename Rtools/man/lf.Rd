@@ -2,7 +2,7 @@
 % Please edit documentation in R/lf.R
 \name{lf}
 \alias{lf}
-\title{List the files in current local machine or on a remote host.}
+\title{List the files in local machine or on a remote host.}
 \usage{
 lf(path = ".", pattern = NULL, all.files = FALSE, full.names = FALSE,
   recursive = FALSE, ignore.case = FALSE, include.dirs = FALSE,

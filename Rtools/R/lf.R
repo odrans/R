@@ -1,4 +1,4 @@
-#' List the files in current local machine or on a remote host.
+#' List the files in local machine or on a remote host.
 #'
 #' This function is an extension of list.files that can also list the files on a remote computer.
 #' @param path a character vector of full path names; the default corresponds to the working directory, 'getwd()'.  Tilde expansion (see 'path.expand') is performed.  Missing values will be ignored. ":" is used to indicate a link to a remote host. The name of the host preceeds the semi-column.
