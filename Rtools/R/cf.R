@@ -16,7 +16,7 @@ rcp <- function(from, to, overwrite = FALSE, recursive = FALSE, copy.mode = TRUE
     if(grepl(":",from)) {
         options(warn=-1)
         
-        cmd <- paste("scp ",from," ",to,sep="")
+        cmd <- paste("rsync -av ",from," ",to,sep="")
         system(cmd)
         
         options(warn=0)
