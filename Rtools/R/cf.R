@@ -11,7 +11,7 @@
 #' ## On remote host,
 #' lf("host:~/user/data/data.hdf","~/user/data/")
 
-cf <- function(from, to, overwrite = FALSE, recursive = FALSE, copy.mode = TRUE) {
+rcf <- function(from, to, overwrite = FALSE, recursive = FALSE, copy.mode = TRUE) {
 
     if(grepl(":",from)) {
         options(warn=-1)

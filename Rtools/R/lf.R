@@ -17,7 +17,7 @@
 #' ## On remote host,
 #' lf("host:~/user/data")
 
-lf <- function(path = ".", pattern = NULL, all.files = FALSE,
+rlf <- function(path = ".", pattern = NULL, all.files = FALSE,
                full.names = FALSE, recursive = FALSE,
                ignore.case = FALSE, include.dirs = FALSE, no.. = FALSE) {
     
