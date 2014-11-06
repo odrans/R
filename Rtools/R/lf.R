@@ -47,7 +47,7 @@ lf <- function(path = ".", pattern = NULL, all.files = FALSE,
         }
 
         if(full.names) {
-            ls <- sapply(ls, function(x) {if(path.host!="/") {paste(path.host,x,sep="/")} else {paste(path.host,x,sep="")}},USE.NAMES=FALSE)
+            ls <- sapply(ls, function(x) {if(path.host!="/") {paste(path,x,sep="/")} else {paste(path,x,sep="")}},USE.NAMES=FALSE)
         }
 
         options(warn=0)
