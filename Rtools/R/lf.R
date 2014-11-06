@@ -50,6 +50,8 @@ rls <- function(path = ".", pattern = NULL, all.files = FALSE,
             ls <- sapply(ls, function(x) {if(path.host!="/") {paste(path,x,sep="/")} else {paste(path,x,sep="")}},USE.NAMES=FALSE)
         }
 
+        if(substr(ls[1],nchar(ls[1]),nchar(ls[1]))=="\r") ls <- gsub("\r","",ls)
+        
         options(warn=0)
         
         return(ls)
