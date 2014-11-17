@@ -29,6 +29,8 @@ plot.proj.map(Lat, Lon, Prod, proj = "eck4", sampling = "cubic",
 
 \item{box.size}{Numeric; Size of the gridbox where the data is averaged. Default is set to 2.0 degrees.}
 
+\item{...}{Additional arguments passed to image.plot (fields package).}
+
 \item{dir.Gtiff}{Character; Directory where is stored the raster dataset in a GTiff format. Default is ".".}
 }
 \description{

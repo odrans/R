@@ -12,6 +12,7 @@
 #' @param box.size Numeric; Size of the gridbox where the data is averaged. Default is set to 2.0 degrees.
 #' @param color Array/Character; The input can be a color palette or the name of a ColorBrewer palette. Default is the Spectral type of ColorBrewer.
 #' @param ncol Numeric; Number of colors in the output colorbors. The input palette is interpolated.
+#' @param ... Additional arguments passed to image.plot (fields package).
 #' @keywords projection, map
 #' @export
 #' @examples
