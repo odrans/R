@@ -60,7 +60,7 @@ project.sdf <- function(sdf.latlon,proj="eck4",sampling="cubic",dir.GTiff=".",in
     sdf.proj <- as(r.proj,"SpatialGridDataFrame")
     names(sdf.proj) <- name.prod
     
-    sdf.proj[[names(sdf.proj)]] <- replace(sdf.proj[[names(sdf.proj)]] ,sdf.proj[[names(sdf.proj)]] ==16200 | sdf.proj[[names(sdf.proj)]] <=1,NA)
+#    sdf.proj[[names(sdf.proj)]] <- replace(sdf.proj[[names(sdf.proj)]] ,sdf.proj[[names(sdf.proj)]] ==16200 | sdf.proj[[names(sdf.proj)]] <=1,NA)
     
     return(sdf.proj)
 
