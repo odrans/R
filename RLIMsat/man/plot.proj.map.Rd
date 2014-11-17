@@ -4,7 +4,7 @@
 \alias{plot.proj.map}
 \title{Plot a projected map of a given dataset}
 \usage{
-plot.proj.map(Lat, Lon, Prod, proj = "eck4", sampling = "cubic",
+\method{plot}{proj.map}(Lat, Lon, Prod, proj = "eck4", sampling = "cubic",
   interp = TRUE, overwrite = TRUE, dir.GTiff = ".", color = "",
   ncol = 64, box.size = 2, ...)
 }

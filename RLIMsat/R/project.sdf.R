@@ -32,11 +32,11 @@ project.sdf <- function(sdf.latlon,proj="eck4",sampling="cubic",dir.GTiff=".",in
         if(file.exists(tif.proj)) file.remove(tif.proj)
     }
 
-    ## Transform the data frame into a raster
-    r.latlon <- raster(sdf.latlon)
-
-    ## Create the latlon raster file
-    if(!file.exists(tif.latlon) | overwrite) tmp <- writeRaster(r.latlon,tif.latlon, drivername = "GTiff",overwrite=TRUE)
+    ## Transform the data frame into a raster and create the GTiff
+    if(!file.exists(tif.latlon) | overwrite) {
+        r.latlon <- raster(sdf.latlon)
+        tmp <- writeRaster(r.latlon,tif.latlon, drivername = "GTiff",overwrite=TRUE)
+    }
     
     ## Create the projected raster file
     if(!file.exists(tif.proj) | overwrite) {
