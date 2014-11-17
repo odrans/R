@@ -18,7 +18,7 @@
 #' @examples
 #' To come.
 
-plot.proj.map <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overwrite=TRUE,dir.GTiff=".",color="",ncol=64,box.size=2,...) {
+map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overwrite=TRUE,dir.GTiff=".",color="",ncol=64,box.size=2,...) {
 
     require(rworldmap,quietly=TRUE)
     require(fields,quietly=TRUE)
