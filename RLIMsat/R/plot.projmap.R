@@ -13,7 +13,7 @@
 #' @param color Array/Character; The input can be a color palette or the name of a ColorBrewer palette. Default is the Spectral type of ColorBrewer.
 #' @param ncol Numeric; Number of colors in the output colorbors. The input palette is interpolated.
 #' @param ... Additional arguments passed to image.plot (fields package).
-#' @keywords projection, map
+#' @keywords projection, mapping
 #' @export
 #' @examples
 #' To come.

@@ -39,6 +39,6 @@ This function returns plots of a mapped given dataset. The initial dataset is av
 \examples{
 To come.
 }
-\keyword{map}
+\keyword{mapping}
 \keyword{projection,}
 
