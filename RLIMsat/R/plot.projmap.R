@@ -49,6 +49,9 @@ map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overw
 
     sdf.proj <- project.sdf(sdf.latlon,proj,sampling,dir.GTiff,interp,overwrite,name.prod)
     map.proj <- project.map(proj)
+
+    sdf.proj[[name.prod]] <- postprocess(sdf.proj[[name.prod]])
+    sdf.proj[[name.prod]] <- replace(sdf.proj[[name.prod]],is.nan(sdf.proj[[name.prod]]),NA)
     
     image.plot(sdf.proj,nlevel=ncol,col=color,...)
     mapCountryData(map.proj,numCats=1,addLegend=FALSE,colourPalette = c("grey88","grey88"),add=T,borderCol = "black",mapTitle="")
