@@ -58,8 +58,8 @@ map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overw
     options <- list(...)
     idx.zlim <- which(names(options)=="zlim"); zlim <- options[[idx.zlim]]
 
-    sdf.proj[[name.prod]] <- replace(sdf.proj[[name.prod]],sdf.proj[[name.prod]]<zlim[1],zlim[1])
-    sdf.proj[[name.prod]] <- replace(sdf.proj[[name.prod]],sdf.proj[[name.prod]]>zlim[2],zlim[2])
+    sdf.proj[[name.prod]] <- replace(sdf.proj[[name.prod]],!is.na(sdf.proj[[name.prod]]) && sdf.proj[[name.prod]]<zlim[1],zlim[1])
+    sdf.proj[[name.prod]] <- replace(sdf.proj[[name.prod]],!is.na(sdf.proj[[name.prod]]) && sdf.proj[[name.prod]]>zlim[2],zlim[2])
     
     image.plot(sdf.proj,nlevel=ncol,col=color,...)
     mapCountryData(map.proj,numCats=1,addLegend=FALSE,colourPalette = c("grey88","grey88"),add=T,borderCol = "black",mapTitle="")
