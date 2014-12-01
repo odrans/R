@@ -55,7 +55,7 @@ map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overw
 
     sdf.proj[[name.prod]] <- replace(sdf.proj[[name.prod]],is.nan(sdf.proj[[name.prod]]),NA)
 
-    print(c(min(sdf.proj[[name.prod]]),max(sdf.proj[[name.prod]])))
+    print(c(min(sdf.proj[[name.prod]],na.rm=T),max(sdf.proj[[name.prod]],na.rm=T)))
     
     options <- list(...)
     idx <- which(names(options)=="zlim"); if(length(idx)!=0) zlim <- options[[idx]]
