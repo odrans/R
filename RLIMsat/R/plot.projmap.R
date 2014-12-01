@@ -52,8 +52,8 @@ map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overw
 
     sdf.proj[[name.prod]] <- postprocess(sdf.proj[[name.prod]])
     sdf.proj[[name.prod]] <- replace(sdf.proj[[name.prod]],is.nan(sdf.proj[[name.prod]]),NA)
-
-    sdf.proj[[name.prod]] <- replace(sdf.proj[[name.prod]],is.nan(sdf.proj[[name.prod]]),NA)
+    
+    sdf.proj[[name.prod]] <- replace(sdf.proj[[name.prod]],sdf.proj[[name.prod]]<0,NA)
 
     print(c(min(sdf.proj[[name.prod]],na.rm=T),max(sdf.proj[[name.prod]],na.rm=T)))
     
