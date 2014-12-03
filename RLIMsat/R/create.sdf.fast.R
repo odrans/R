@@ -42,10 +42,12 @@ create.sdf.fast <- function(lat.prod,lon.prod,prod,box.size=2.0,name.prod) {
     for(i in 1:length(df.prod$x)) {
         i.lon <- df.prod$Group.1[i]; i.lat <- df.prod$Group.2[i]
         idx <- which(lon==levels.lon[i.lon] & lat==levels.lat[i.lat])
+        print(idx)
         x[idx] <- df.prod$x[[i]]
     }
     print("done")
-    
+
+    print(x)
     x <- replace(x,x<=0 | is.na(x),0.0)
 
     ## Create the sdf
