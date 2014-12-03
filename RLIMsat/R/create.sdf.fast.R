@@ -29,7 +29,8 @@ create.sdf.fast <- function(lat.prod,lon.prod,prod,box.size=2.0,name.prod) {
     idx.lon <- as.integer(cut(lon.prod, levels.lon.2, right = FALSE))
     idx.lat <- as.integer(cut(lat.prod, levels.lat.2, right = FALSE))
 
-    df.prod <- aggregate(prod,list(idx.lon,idx.lat),mean,na.rm=TRUE)
+    df.prod <- aggregate(log(prod),list(idx.lon,idx.lat),mean,na.rm=TRUE)
+    df.prod$x <- exp(df.prod$x)
     
     tmp <- vector("list",nlat); names(tmp) <- levels.lat
     for(x in names(tmp)) {tmp[[x]] <- rep(as.numeric(x),nlon)}; lat <- unlist(tmp,use.names=FALSE)
