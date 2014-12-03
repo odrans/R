@@ -23,8 +23,8 @@ create.sdf <- function(lat.prod,lon.prod,prod,box.size=2.0,name.prod) {
     x <- NULL; lat <- NULL; lon <- NULL
     
     ## Create the list containing the product values for each grid point
-    l <- grid.list(lon.prod,lat.prod,prod,box.size)
-
+    l <- grid.list(lon.prod,lat.prod,prod,box.size)    
+    
     ## Prepare the vectors for the sdf
     for(ilat in 1:nlat) {
         for(ilon in 1:nlon) {
