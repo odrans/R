@@ -44,7 +44,7 @@ map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overw
         overwrite <- TRUE
     }
 
-    if(overwrite) sdf.latlon <- create.sdf(Lat,Lon,Prod,box.size,name.prod)
+    if(overwrite) sdf.latlon <- create.sdf.fast(Lat,Lon,Prod,box.size,name.prod)
 
     sdf.proj <- project.sdf(sdf.latlon,proj,sampling,dir.GTiff,interp,overwrite,name.prod)
     map.proj <- project.map(proj)
