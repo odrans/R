@@ -44,10 +44,8 @@ map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overw
         overwrite <- TRUE
     }
 
-    print("start gridding")
     if(overwrite) sdf.latlon <- create.sdf.fast(Lat,Lon,Prod,box.size,name.prod)
-    str(sdf.latlon)
-    stop()
+
     sdf.proj <- project.sdf(sdf.latlon,proj,sampling,dir.GTiff,interp,overwrite,name.prod)
     map.proj <- project.map(proj)
 

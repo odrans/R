@@ -26,28 +26,22 @@ create.sdf.fast <- function(lat.prod,lon.prod,prod,box.size=2.0,name.prod) {
     levels.lon.2 <- box.size * ((-180 / box.size) : (180 / box.size))
     levels.lat.2 <- box.size * ((-90 / box.size) : (90 / box.size))
 
-    print("cut")
     idx.lon <- as.integer(cut(lon.prod, levels.lon.2, right = FALSE))
     idx.lat <- as.integer(cut(lat.prod, levels.lat.2, right = FALSE))
 
+    df.prod <- aggregate(prod,list(idx.lon,idx.lat),mean,na.rm=TRUE)
+    
     tmp <- vector("list",nlat); names(tmp) <- levels.lat
     for(x in names(tmp)) {tmp[[x]] <- rep(as.numeric(x),nlon)}; lat <- unlist(tmp,use.names=FALSE)
     lon <- rep(levels.lon,nlat)
 
-    print("aggregate")
-    df.prod <- aggregate(prod,list(idx.lon,idx.lat),mean)
-
-    print("postprocess")
     x <- array(NA,nlat*nlon)
     for(i in 1:length(df.prod$x)) {
         i.lon <- df.prod$Group.1[i]; i.lat <- df.prod$Group.2[i]
         idx <- which(lon==levels.lon[i.lon] & lat==levels.lat[i.lat])
-        print(idx)
-        x[idx] <- df.prod$x[[i]]
+        x[idx] <- df.prod$x[i]
     }
-    print("done")
 
-    print(x)
     x <- replace(x,x<=0 | is.na(x),0.0)
 
     ## Create the sdf
