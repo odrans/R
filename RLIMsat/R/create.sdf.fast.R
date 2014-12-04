@@ -29,7 +29,10 @@ create.sdf.fast <- function(lat.prod,lon.prod,prod,box.size=2.0,name.prod,agg.fu
     idx.lon <- as.integer(cut(lon.prod, levels.lon.2, right = FALSE))
     idx.lat <- as.integer(cut(lat.prod, levels.lat.2, right = FALSE))
 
-    df.prod <- aggregate(prod,list(idx.lon,idx.lat),agg.fun,na.rm=TRUE)
+    print("stat aggr")
+    df.prod <- aggregate(prod,by=list(idx.lon,idx.lat),FUN=agg.fun,na.rm=TRUE)
+    print("finish")
+    stop()
     
     tmp <- vector("list",nlat); names(tmp) <- levels.lat
     for(x in names(tmp)) {tmp[[x]] <- rep(as.numeric(x),nlon)}; lat <- unlist(tmp,use.names=FALSE)

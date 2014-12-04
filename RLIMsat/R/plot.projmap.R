@@ -23,9 +23,6 @@ map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overw
     require(rworldmap,quietly=TRUE)
     require(fields,quietly=TRUE)
 
-    print(agg.fun(c(1,2)))
-    stop()
-    
     name.prod <- deparse(substitute(Prod))
     name.prod <- gsub("$",".",name.prod,fixed=TRUE)
     name.prod <- gsub("(","",name.prod,fixed=TRUE); name.prod <- gsub(")","",name.prod,fixed=TRUE)
