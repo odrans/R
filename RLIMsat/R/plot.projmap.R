@@ -18,7 +18,7 @@
 #' @examples
 #' To come.
 
-map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overwrite=TRUE,dir.GTiff=".",color="",ncol=64,box.size=2,postprocess=function(x){return(x)},...) {
+map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overwrite=TRUE,dir.GTiff=".",color="",ncol=64,box.size=2,postprocess=function(x){return(x)},agg.fun=mean,...) {
 
     require(rworldmap,quietly=TRUE)
     require(fields,quietly=TRUE)
@@ -44,7 +44,7 @@ map.plot <- function(Lat,Lon,Prod,proj="eck4",sampling="cubic",interp=TRUE,overw
         overwrite <- TRUE
     }
 
-    if(overwrite) sdf.latlon <- create.sdf.fast(Lat,Lon,Prod,box.size,name.prod)
+    if(overwrite) sdf.latlon <- create.sdf.fast(Lat,Lon,Prod,box.size,name.prod,agg.fun)
 
     sdf.proj <- project.sdf(sdf.latlon,proj,sampling,dir.GTiff,interp,overwrite,name.prod)
     map.proj <- project.map(proj)
