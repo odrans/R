@@ -4,7 +4,7 @@
 \alias{create.sdf.fast}
 \title{Transfrom an array of data into a gridded spatial data frame}
 \usage{
-create.sdf.fast(lat.prod, lon.prod, prod, box.size = 2, name.prod)
+create.sdf.fast(lat.prod, lon.prod, prod, box.size = 2, name.prod, agg.fun)
 }
 \arguments{
 \item{lat.prod}{Array; Latitudes of the dataset.}

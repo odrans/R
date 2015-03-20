@@ -6,7 +6,8 @@
 \usage{
 map.plot(Lat, Lon, Prod, proj = "eck4", sampling = "cubic", interp = TRUE,
   overwrite = TRUE, dir.GTiff = ".", color = "", ncol = 64,
-  box.size = 2, postprocess = function(x) {     return(x) }, ...)
+  box.size = 2, agg.fun = mean, postprocess = function(x) {     return(x)
+  }, ...)
 }
 \arguments{
 \item{Lat}{Array; Latitudes of the dataset.}
