@@ -12,7 +12,8 @@
 #' value.sds <- h4read(fname,list.sds,"Latitude") ## extract "Latitude" from data.hdf
 
 h4read <- function(fname,sds.name,sds,...) {
-    library(rgdal,quietly=TRUE)
+
+    suppressMessages(suppressWarnings(require(rgdal)))
 
     if(!file.exists(fname)) {
         warning("This file doesn't exists",immediate.=TRUE)

@@ -13,7 +13,7 @@
 
 create.sdf <- function(lat.prod,lon.prod,prod,box.size=2.0,name.prod) {
 
-    require(rgdal,quietly=TRUE)
+    suppressMessages(suppressWarnings(require(rgdal)))
 
     ## Initialize box parameters
     lim.box <- c(360-box.size,180-box.size)
